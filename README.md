@@ -1,225 +1,158 @@
-# 🅰️ Guía Completa de Instalación de Angular
+# Guía de Instalación de Angular
 
-## 📋 Prerrequisitos Previos
+## Prerrequisitos
+Antes de comenzar, asegúrate de tener instalado:
+- **Node.js** (versión 18 o superior)
+- **npm** (generalmente viene incluido con Node.js)
 
-### Verificar instalaciones necesarias
+Puedes verificar las instalaciones con:
 ```bash
-# Comprobar si Node.js está instalado
 node --version
-
-# Comprobar si npm está instalado  
 npm --version
 ```
 
-**⚠️ Requisitos mínimos:**
-- Node.js versión 18 o superior
-- npm versión 8 o superior
+## 📋 Pasos de Instalación
 
-### Si no tienes Node.js instalado:
-1. Ve a [nodejs.org](https://nodejs.org/)
-2. Descarga la versión LTS (Recomendada)
-3. Sigue el asistente de instalación
+### 1. Preparar el Entorno de Trabajo
+Crea una carpeta para organizar tus proyectos de Angular:
 
----
-
-## 🚀 Instalación de Angular CLI
-
-### Paso 1: Instalar Angular CLI globalmente
 ```bash
-npm install -g @angular/cli
-```
+# Cambiar a la unidad donde deseas trabajar (opcional)
+d:
 
-### Paso 2: Verificar la instalación
-```bash
-ng version
-```
-
-**✅ Deberías ver información sobre Angular CLI si la instalación fue exitosa.**
-
----
-
-## 🆕 Crear tu Primer Proyecto Angular
-
-### Paso 3: Navegar a donde quieres crear el proyecto
-```bash
-# Ejemplo: ir al escritorio
-cd Desktop
-
-# O crear una carpeta nueva
+# Crear carpeta principal
 mkdir proyectos-angular
 cd proyectos-angular
 ```
 
-### Paso 4: Generar nuevo proyecto
+### 2. Instalar Angular CLI Globalmente
 ```bash
-ng new mi-primer-proyecto
+npm install -g @angular/cli
 ```
 
-**📝 Durante la creación te preguntará:**
-```
-? Would you like to add Angular routing? (y/N) 
-? Which stylesheet format would you like to use? 
-❯ CSS 
-  SCSS   
-  Sass   
-  Less   
-```
-
-**Recomendación para principiantes:**
-- Angular routing: **y** (Sí)
-- Stylesheet format: **CSS**
-
-### Paso 5: Navegar al proyecto creado
+### 3. Verificar la Instalación
 ```bash
-cd mi-primer-proyecto
+ng version
 ```
 
----
+### 4. Crear un Nuevo Proyecto
+```bash
+ng new mi-proyecto-angular
+```
 
-## 🎯 Ejecutar la Aplicación
+**Notas importantes durante la creación:**
+- ✅ **Angular Routing**: Selecciona 'y' (yes) si quieres routing
+- 🎨 **Stylesheet Format**: Elige el preprocesador CSS que prefieras (CSS, SCSS, Less, etc.)
 
-### Paso 6: Iniciar el servidor de desarrollo
+### 5. Navegar al Directorio del Proyecto
+```bash
+cd mi-proyecto-angular
+```
+
+### 6. Ejecutar el Servidor de Desarrollo
 ```bash
 ng serve
 ```
 
-### Paso 7: Abrir en el navegador
-Ve a: **[http://localhost:4200](http://localhost:4200)**
+### 7. Visualizar la Aplicación
+Abre tu navegador y visita: 
+```
+http://localhost:4200
+```
 
-**✅ Deberías ver la página de bienvenida de Angular.**
+## 🚀 Comandos Útiles
 
----
-
-## 🛠 Comandos Básicos que Debes Conocer
-
-### Comandos de desarrollo
+### Desarrollo
 ```bash
 # Iniciar servidor de desarrollo
 ng serve
 
-# Compilar para producción
-ng build
+# Compilar en modo producción
+ng build --prod
 
-# Ejecutar pruebas
+# Ejecutar pruebas unitarias
 ng test
+
+# Ejecutar pruebas end-to-end
+ng e2e
 ```
 
-### Comandos para generar elementos
+### Generadores de Código
 ```bash
-# Crear un nuevo componente
+# Generar un componente
 ng generate component nombre-componente
 
-# Crear un servicio
+# Generar un servicio
 ng generate service nombre-servicio
 
-# Crear un módulo
+# Generar un módulo
 ng generate module nombre-modulo
+
+# Generar una directiva
+ng generate directive nombre-directiva
 ```
 
-### Comandos abreviados
+### Utilidades
 ```bash
-# En lugar de ng generate component
-ng g c nombre-componente
+# Actualizar Angular CLI globalmente
+npm install -g @angular/cli@latest
 
-# En lugar de ng generate service  
-ng g s nombre-servicio
+# Actualizar dependencias del proyecto
+ng update
 ```
 
----
+## 🛠️ Solución de Problemas Comunes
 
-## 📁 Estructura de Carpetas del Proyecto
-
-```
-mi-primer-proyecto/
-├── src/
-│   ├── app/
-│   │   ├── app.component.ts      # Componente principal
-│   │   ├── app.component.html    # Vista del componente
-│   │   └── app.module.ts         # Módulo principal
-│   ├── assets/                   # Imágenes, fuentes, etc.
-│   └── index.html               # Página principal
-├── node_modules/                # Dependencias instaladas
-├── package.json                # Configuración del proyecto
-└── angular.json               # Configuración de Angular
-```
-
----
-
-## 🔧 Solución de Problemas Comunes
-
-### Problema: Comando 'ng' no encontrado
-**Solución:**
+### Error: "ng command not found"
 ```bash
-# Reinstalar Angular CLI
-npm install -g @angular/cli
-
 # Cerrar y reabrir la terminal
+# O ejecutar:
+npm install -g @angular/cli
 ```
 
-### Problema: Puerto 4200 está en uso
-**Solución:**
-```bash
-# Usar un puerto diferente
-ng serve --port 4201
-```
+### Error de Permisos (Windows)
+- Ejecutar la terminal como Administrador
 
-### Problema: Error de permisos (macOS/Linux)
-**Solución:**
+### Error de Permisos (macOS/Linux)
 ```bash
-# Ejecutar con permisos de administrador
 sudo npm install -g @angular/cli
 ```
 
-### Problema: Instalación muy lenta
-**Solución:**
+### Puerto 4200 en Uso
 ```bash
-# Usar el registry de npm oficial
-npm config set registry https://registry.npmjs.org/
+ng serve --port 4201
 ```
 
----
+## 📁 Estructura del Proyecto
+```
+mi-proyecto-angular/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── models/
+│   │   └── app.module.ts
+│   ├── assets/
+│   ├── environments/
+│   └── index.html
+├── node_modules/
+├── package.json
+└── angular.json
+```
 
-## 💡 Consejos para Principiantes
+## ✅ Verificación Final
+Después de la instalación, verifica que todo funcione correctamente:
 
-### 1. **Mantén abierta la terminal**
-El servidor se reinicia automáticamente cuando haces cambios.
+1. ✅ Angular CLI instalado: `ng version`
+2. ✅ Proyecto creado: `cd mi-proyecto-angular`
+3. ✅ Servidor ejecutándose: `ng serve`
+4. ✅ Aplicación visible en: `http://localhost:4200`
 
-### 2. **Usa un buen editor de código**
-Recomendado: **Visual Studio Code** con la extensión **Angular Language Service**.
-
-### 3. **Revisa la consola del navegador**
-Presiona **F12** para ver errores y advertencias.
-
-### 4. **Aprende los atajos de teclado**
-- **Ctrl+C** en la terminal: Detener el servidor
-- **Ctrl+S** en el editor: Guardar y ver cambios
-
----
-
-## 🌐 Recursos de Aprendizaje
-
-- **[Documentación Oficial](https://angular.io/docs)** - La mejor referencia
-- **[Angular Tutorial](https://angular.io/tutorial)** - Tour de héroes (oficial)
-- **[Angular CLI](https://cli.angular.io/)** - Referencia de comandos
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/angular)** - Ayuda de la comunidad
-
----
-
-## ✅ Checklist de Verificación
-
-- [ ] Node.js instalado (versión 18+)
-- [ ] npm instalado (versión 8+)
-- [ ] Angular CLI instalado globalmente
-- [ ] Proyecto creado exitosamente
-- [ ] Servidor ejecutándose en localhost:4200
-- [ ] Página de Angular visible en el navegador
+## 📚 Recursos Adicionales
+- [Documentación Oficial de Angular](https://angular.io/docs)
+- [Angular CLI Reference](https://angular.io/cli)
+- [Angular Style Guide](https://angular.io/guide/styleguide)
 
 ---
 
-## 🎉 ¡Felicidades!
-
-Has instalado Angular correctamente. Ahora puedes comenzar a desarrollar aplicaciones web modernas.
-
-
-*Última actualización: ${new Date().toLocaleDateString()}*  
-*Versión de Angular: Consulta con `ng version`*
+**¡Listo! Ahora tienes Angular instalado y funcionando. 🎉**
