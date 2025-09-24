@@ -40,9 +40,9 @@ ng version
 ng new mi-proyecto-angular
 ```
 
-**Notas importantes durante la creación:**
-- ✅ **Angular Routing**: Selecciona 'y' (yes) si quieres routing
-- 🎨 **Stylesheet Format**: Elige el preprocesador CSS que prefieras (CSS, SCSS, Less, etc.)
+**Nota: Durante la creación, Angular te preguntará:**
+- ✅ ¿Quieres agregar Angular routing? (y/N)
+- 🎨 ¿Qué formato de stylesheet prefieres? (CSS, SCSS, etc.)
 
 ### 5. Navegar al Directorio del Proyecto
 ```bash
