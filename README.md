@@ -12,7 +12,7 @@ npm --version
 ```
 
 ## 📋 Pasos de Instalación
-
+Ingresar a CMD (Simbolo de Sistema - Command Prompt)
 ### 1. Preparar el Entorno de Trabajo
 Crea una carpeta para organizar tus proyectos de Angular:
 
